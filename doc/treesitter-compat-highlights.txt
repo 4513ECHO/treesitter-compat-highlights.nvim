@@ -1,0 +1,52 @@
+*treesitter-compat-highlights.txt*   Compatible highlights for nvim-treesitter
+
+Author: Hibiki <mail@4513echo.dev>
+License: MIT License
+URL: https://github.com/4513ECHO/treesitter-compat-highlights.nvim
+Last change: 2024 Feb 14
+
+==============================================================================
+CONTENTS                               *treesitter-compat-highlights-contents*
+
+Introduction			|treesitter-compat-highlights-introduction|
+Interface			|treesitter-compat-highlights-interface|
+About				|treesitter-compat-highlights-about|
+
+==============================================================================
+INTRODUCTION                       *treesitter-compat-highlights-introduction*
+
+*treesitter-compat-highlights* is a plugin to provide the compatible highlights
+in order to use colorschemes that uses old |nvim-treesitter| highlight group
+
+See also:
+https://github.com/neovim/neovim/commit/f5dc45310941dff6efc02d955fc0c110190e9b85
+https://github.com/nvim-treesitter/nvim-treesitter/commit/1ae9b0e4558fe7868f8cda2db65239cfb14836d0
+
+==============================================================================
+INTERFACE                             *treesitter-compat-highlights-interface*
+
+------------------------------------------------------------------------------
+LUA INTERFACE                     *treesitter-compat-highlights-lua-interface*
+
+apply()                                 *treesitter-compat-highlights.apply()*
+	Apply compatible highlights.
+
+	Example with |ColorScheme| |autocmd|: >lua
+	vim.api.nvim_create_autocmd("ColorScheme", {
+	  group = "treesitter-compat-highlights",
+	  pattern = "*",
+	  callback = require("treesitter-compat-highlights").apply,
+	  desc = "Apply compatible highlights for nvim-treesitter",
+	})
+
+
+==============================================================================
+ABOUT                                     *treesitter-compat-highlights-about*
+
+|treesitter-compat-highlights| is developed by Hibiki(4513ECHO) and licensed
+under the MIT License. Visit the project page for the latest version:
+
+	https://github.com/4513ECHO/treesitter-compat-highlights.nvim
+
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:noet:fen:
